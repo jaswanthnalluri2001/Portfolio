@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jaswanth Nalluri | API Testing & QA Engineer</title>
+<title>AI Engineer | Portfolio</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
 <script src="https://unpkg.com/scrollreveal"></script>
-<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<script src="https://kit.fontawesome.com/4d3c9a7c8e.js" crossorigin="anonymous"></script>
 
 <style>
 *{
@@ -16,31 +16,42 @@
   padding:0;
   box-sizing:border-box;
   font-family:'Inter',sans-serif;
-  cursor:none;
 }
 
 body{
-  background:#0a0a0a;
-  color:#fff;
+  background:black;
+  color:white;
   overflow-x:hidden;
+  cursor:default;
 }
 
-#particles-js{
+/* SOLAR GALAXY BACKGROUND */
+body::before{
+  content:"";
+  position:fixed;
+  width:200%;
+  height:200%;
+  background:radial-gradient(circle at center, #1e3a8a 0%, #000000 60%);
+  animation:galaxyMove 40s linear infinite;
+  z-index:-2;
+}
+
+@keyframes galaxyMove{
+  from{transform:rotate(0deg);}
+  to{transform:rotate(360deg);}
+}
+
+/* STARS */
+body::after{
+  content:"";
   position:fixed;
   width:100%;
   height:100%;
+  background-image:
+  radial-gradient(white 1px, transparent 1px);
+  background-size:3px 3px;
+  opacity:0.08;
   z-index:-1;
-}
-
-.cursor{
-  width:18px;
-  height:18px;
-  border:2px solid #3b82f6;
-  border-radius:50%;
-  position:fixed;
-  pointer-events:none;
-  transform:translate(-50%,-50%);
-  z-index:9999;
 }
 
 /* NAV */
@@ -50,19 +61,26 @@ nav{
   padding:25px 8%;
   display:flex;
   justify-content:space-between;
+  backdrop-filter:blur(8px);
   background:rgba(0,0,0,0.6);
-  backdrop-filter:blur(10px);
   z-index:1000;
 }
 
-nav h1{font-weight:800;}
+nav h1{
+  font-weight:800;
+  letter-spacing:1px;
+}
+
 nav a{
+  color:white;
   text-decoration:none;
-  color:#fff;
   margin-left:30px;
   transition:0.3s;
 }
-nav a:hover{color:#3b82f6;}
+
+nav a:hover{
+  color:#60a5fa;
+}
 
 /* HERO */
 .hero{
@@ -76,11 +94,11 @@ nav a:hover{color:#3b82f6;}
 }
 
 .hero img{
-  width:170px;
-  height:170px;
+  width:160px;
+  height:160px;
   border-radius:50%;
   object-fit:cover;
-  border:4px solid #3b82f6;
+  border:3px solid #60a5fa;
   margin-bottom:30px;
 }
 
@@ -89,14 +107,17 @@ nav a:hover{color:#3b82f6;}
   font-weight:800;
 }
 
-.hero span{color:#3b82f6;}
-
-.hero p{
-  margin-top:20px;
-  color:#a1a1aa;
-  font-size:1.2rem;
+.hero span{
+  color:#60a5fa;
 }
 
+.hero p{
+  margin-top:15px;
+  font-size:1.3rem;
+  color:#cbd5e1;
+}
+
+/* SECTION */
 section{
   padding:120px 8%;
 }
@@ -107,14 +128,14 @@ section{
   margin-bottom:40px;
 }
 
+/* ABOUT */
 .summary{
   max-width:900px;
-  font-size:1.1rem;
-  color:#cbd5e1;
-  line-height:1.7;
+  line-height:1.8;
+  color:#e2e8f0;
 }
 
-/* WORK CARDS */
+/* PROJECTS */
 .projects{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
@@ -122,23 +143,23 @@ section{
 }
 
 .card{
-  background:#111;
+  background:rgba(20,20,20,0.7);
   padding:30px;
-  border-radius:12px;
-  border:1px solid #1f1f1f;
+  border-radius:15px;
+  border:1px solid #1f2937;
+  position:relative;
   transition:0.4s;
 }
 
 .card:hover{
   transform:translateY(-8px);
-  box-shadow:0 0 30px rgba(59,130,246,0.4);
-  border-color:#3b82f6;
+  box-shadow:0 0 30px rgba(96,165,250,0.4);
+  border-color:#60a5fa;
 }
 
 .card h4{
   margin-bottom:15px;
-  font-size:1.3rem;
-  color:#3b82f6;
+  color:#60a5fa;
 }
 
 .card ul{
@@ -147,114 +168,123 @@ section{
 
 .card li{
   margin-bottom:8px;
-  color:#cbd5e1;
   font-size:0.95rem;
+  color:#cbd5e1;
 }
 
+/* GITHUB ICON ON PROJECT */
+.github-icon{
+  position:absolute;
+  top:15px;
+  right:15px;
+  font-size:1.3rem;
+  color:white;
+  transition:0.3s;
+}
+
+.github-icon:hover{
+  color:#60a5fa;
+}
+
+/* FOOTER */
 footer{
-  padding:40px 8%;
+  padding:50px 8%;
   text-align:center;
-  color:#6b7280;
-  border-top:1px solid #1f1f1f;
+  border-top:1px solid #1f2937;
+}
+
+.social-icons a{
+  margin:0 15px;
+  font-size:1.5rem;
+  color:white;
+  transition:0.3s;
+}
+
+.social-icons a:hover{
+  color:#60a5fa;
 }
 </style>
 </head>
 
 <body>
 
-<div id="particles-js"></div>
-<div class="cursor"></div>
-
 <nav>
-  <h1>Jaswanth</h1>
+  <h1>AI Engineer</h1>
   <div>
-    <a href="#summary">Profile</a>
-    <a href="#work">Work</a>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
     <a href="#contact">Contact</a>
   </div>
 </nav>
 
 <section class="hero">
-  <img src="profile.jpg" alt="Jaswanth Nalluri">
-  <h2>Welcome, I'm <span>Jaswanth</span></h2>
+  <img src="profile.jpg" alt="Profile">
+  <h2>Hello, I'm <span>Jaswanth</span></h2>
   <p><span id="typed"></span></p>
 </section>
 
-<section id="summary">
-  <h3 class="section-title">Professional Summary</h3>
+<section id="about">
+  <h3 class="section-title">About</h3>
   <div class="summary">
-    Detail-oriented API Testing / QA Engineer with hands-on experience in REST API validation,
-    backend testing, and full-stack development, complemented by domain exposure in warehouse
-    management systems and robotics-based automation. Experienced in testing data-driven and AI-enabled applications,
-    ensuring API reliability, data accuracy, and system integration quality. Seeking API Testing,
-    QA Engineer, or Automation roles.
+    I am a recent Computer Science graduate with a strong interest in Artificial Intelligence and Machine Learning. I have hands-on experience building AI-driven applications, including REST API-based chatbot systems using Retrieval-Augmented Generation (RAG), machine learning prediction services, and backend-tested data systems.<br><br>
+
+    My work focuses on developing reliable, scalable, and data-driven AI solutions while ensuring model accuracy, API performance, and system integration quality.<br><br>
+
+    I am actively seeking entry-level AI Engineer or Machine Learning Engineer roles where I can contribute to real-world AI systems and continue growing in advanced ML, GenAI, and intelligent automation.
   </div>
 </section>
 
-<section id="work">
-  <h3 class="section-title">Work & Projects</h3>
+<section id="projects">
+  <h3 class="section-title">Projects</h3>
   <div class="projects">
 
     <div class="card">
-      <h4>University FAQ Chatbot – API Testing & GenAI</h4>
+      <a href="#" class="github-icon"><i class="fab fa-github"></i></a>
+      <h4>University FAQ Chatbot – RAG System</h4>
       <ul>
-        <li>Designed REST API-based chatbot for university FAQs.</li>
-        <li>Implemented RAG using FAISS vector database and embeddings.</li>
-        <li>Tested endpoints for inputs, latency, and error handling.</li>
-        <li>Validated JSON schemas & HTTP status codes using Postman.</li>
-        <li>Improved response consistency via retrieval validation.</li>
+        <li>Built REST API-based chatbot using RAG architecture.</li>
+        <li>Integrated FAISS vector database and embeddings.</li>
+        <li>Optimized retrieval logic and prompt validation.</li>
       </ul>
     </div>
 
     <div class="card">
-      <h4>API Testing Framework for ML Prediction Services</h4>
+      <a href="#" class="github-icon"><i class="fab fa-github"></i></a>
+      <h4>ML Prediction API Service</h4>
       <ul>
-        <li>Designed API test cases for ML inference endpoints.</li>
-        <li>Validated payloads, schemas, confidence scores.</li>
-        <li>Automated regression workflows using Python.</li>
-        <li>Performed negative testing & error validation.</li>
-        <li>Verified backend ML outputs vs API responses.</li>
+        <li>Developed ML inference APIs for prediction services.</li>
+        <li>Validated payload schemas and output consistency.</li>
+        <li>Automated regression tests using Python.</li>
       </ul>
     </div>
 
     <div class="card">
-      <h4>Warehouse Inventory Management System</h4>
+      <a href="#" class="github-icon"><i class="fab fa-github"></i></a>
+      <h4>Warehouse Inventory System</h4>
       <ul>
-        <li>Tested backend APIs for inventory & order processing.</li>
-        <li>Validated data consistency using SQL queries.</li>
-        <li>Designed test cases for high-volume transactions.</li>
-        <li>Performed integration & regression testing.</li>
-        <li>Simulated real-world warehouse workflows.</li>
+        <li>Tested backend APIs and SQL-based workflows.</li>
+        <li>Ensured high-volume transaction consistency.</li>
+        <li>Performed integration & system validation testing.</li>
       </ul>
     </div>
 
   </div>
 </section>
 
-<section id="contact">
-  <h3 class="section-title">Contact</h3>
-  <p>Email: jaswanthnalluri2001@gmail.com</p>
-  <p>LinkedIn: linkedin.com/in/jaswanthnalluri27</p>
-  <p>GitHub: github.com/jaswanthnalluri2001</p>
-</section>
-
-<footer>
-  © 2026 Jaswanth Nalluri — API Testing Portfolio
+<footer id="contact">
+  <div class="social-icons">
+    <a href="#"><i class="fab fa-github"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+    <a href="#"><i class="fas fa-envelope"></i></a>
+  </div>
 </footer>
 
 <script>
-const cursor=document.querySelector(".cursor");
-document.addEventListener("mousemove",e=>{
-  cursor.style.left=e.pageX+"px";
-  cursor.style.top=e.pageY+"px";
-});
-
 new Typed("#typed",{
   strings:[
-    "API Testing Engineer",
-    "QA Automation Specialist",
-    "REST API Validation Expert",
-    "AI & ML Testing Engineer"
+    "Artificial Intelligence Engineer",
+    "Machine Learning Developer",
+    "GenAI & RAG Enthusiast"
   ],
   typeSpeed:50,
   backSpeed:30,
@@ -263,16 +293,6 @@ new Typed("#typed",{
 
 ScrollReveal().reveal('.section-title',{delay:200,distance:'50px',origin:'bottom'});
 ScrollReveal().reveal('.card',{interval:200});
-
-particlesJS("particles-js",{
-  particles:{
-    number:{value:60},
-    color:{value:"#3b82f6"},
-    size:{value:3},
-    line_linked:{enable:true,color:"#3b82f6"},
-    move:{speed:2}
-  }
-});
 </script>
 
 </body>
